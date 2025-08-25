@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+  <meta charset="UTF-8">
+  <title>Takas Oyunu</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <h1>Takas Oyunu</h1>
+    <p>Bu oyunda, yaptığınız her takas için altın kazanabilirsiniz. Oyunun amacı en çok sayıda altını elde etmek. Sonsuz sayıda altın elde edebilir misiniz yoksa belli bir sayıdan sonra oyun sonlanır mı??</p>
+    
+    <!-- Taşların Durumunu Gösteren Alan -->
+    <div class="container">
+        <div class="resimler">
+            <img src="{{ url_for('static', filename='resimler/Zümrüt.jpg') }}" alt="Zümrüt" width="150" height="125">
+            
+        </div>
+        <div class="resimler">
+            <img src="{{ url_for('static', filename='resimler/Yakut.jpg') }}" alt="Yakut" width="150" height="125">
+        </div>
+        <div class="resimler">
+            <img src="{{ url_for('static', filename='resimler/Beyaz-Safir.jpg') }}" alt="Safir" width="150" height="125">
+
+            
+        </div>
+    </div>
+    <div class="container">
+    <h3 class="sayi">ZÜMRÜT : <span id="zümrüt-sayi">{{ game_state.zümrüt }}</span></h3>
+    <h3 class="sayi">YAKUT : <span id="yakut-sayi">{{ game_state.yakut }}</span></h3>
+    <h3 class="sayi">SAFİR : <span id="safir-sayi">{{ game_state.safir }}</span></h3>
+    </div>
+    <!-- Altın Miktarını Gösteren Alan -->
+    <h2 id="para">ALTIN : <span id="altin-sayi">{{ game_state.altin }}</span></h2>
+    <form action="/restart" method="post">
+        <button id="yeniden-basla" type="submit">Yeniden Başla</button>
+    </form>
+
+    <!-- Mesaj Alanı -->
+    <p id="message-area">{{ game_state.message }}</p>
+
+
+    <hr>
+    <h3>Takas Seçenekleri</h3>
+
+    <!-- Takas 1 -->
+    <div class="container2">
+        <div class="işlem1">1 YAKUT</div>+
+        <div class="işlem">1 SAFİR</div>=
+        <div class="işlem2">1 ZÜMRÜT</div>
+        <!-- data-trade-id ile hangi takas olduğunu belirtmek daha doğru bir yöntemdir -->
+        <div class="onay" data-trade-id="takas1"></div>
+    </div>
+    <br>
+    
+    <!-- Takas 2 -->
+    <div class="container2">
+        <div class="işlem2">1 ZÜMRÜT</div>+
+        <div class="işlem">1 SAFİR</div>=
+        <div class="işlem1">1 YAKUT</div>
+        <div class="onay" data-trade-id="takas2"></div>
+    </div>
+    <br>
+
+    <!-- Takas 3 -->
+    <div class="container3">
+        <div class="işlem1">1 YAKUT</div>=
+        <div class="işlem">2 SAFİR</div>
+        <div class="onay" data-trade-id="takas3"></div>
+    </div>
+
+<script>
+    // DÜZELTİLMİŞ JAVASCRIPT KODU
+
+    // Tüm takas butonlarını seçelim.
+    const tradeButtons = document.querySelectorAll('.onay');
+
+    // Her butona bir tıklama olayı ekleyelim.
+    tradeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Butonun 'data-trade-id' özelliğinden takas ID'sini alalım.
+            const tradeId = button.dataset.tradeId;
+            // Sunucuya istek göndermek için fonksiyonu çağıralım.
+            performTrade(tradeId);
+        });
+    });
+
+    // Sunucu ile iletişim kuran asenkron fonksiyon
+    async function performTrade(tradeId) {
+        try {
+            const response = await fetch('/takas', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ takas_id: tradeId })
+            });
+
+            // Yanıt başarılı değilse konsola hata yazdır.
+            if (!response.ok) {
+                console.error('Sunucudan hatalı yanıt:', response.statusText);
+                return;
+            }
+
+            // Sunucudan gelen yeni oyun durumunu (JSON) alalım.
+            const newState = await response.json();
+            // Arayüzü yeni verilerle güncelleyelim.
+            updateUI(newState);
+
+        } catch (error) {
+            console.error('Takas sırasında bir hata oluştu:', error);
+        }
+    }
+
+    // Arayüzü (UI) güncelleyen fonksiyon
+    function updateUI(state) {
+        document.getElementById('zümrüt-sayi').innerText = state.zümrüt;
+        document.getElementById('yakut-sayi').innerText = state.yakut;
+        document.getElementById('safir-sayi').innerText = state.safir;
+        document.getElementById('altin-sayi').innerText = state.altin;
+        document.getElementById('message-area').innerText = state.message;
+    }
+  </script>
+  <summary>©Samet4216----25/08/25</summary>
+  </body>
+</html>

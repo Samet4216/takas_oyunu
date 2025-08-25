@@ -1,0 +1,19 @@
+# Sanal ortam
+venv/
+ENV/
+env/
+
+# Python cache dosyaları
+__pycache__/
+*.pyc
+
+# Gizli dosyalar
+.env
+
+# IDE dosyaları
+.vscode/
+.idea/
+
+# Sistem dosyaları
+.DS_Store
+Thumbs.db
