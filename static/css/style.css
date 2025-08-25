@@ -22,7 +22,7 @@ p{
 }
 .container3 {
   display: flex; /* esnek kutu modeli */
-  gap: 30px; /* kutular arasındaki boşluk */
+  gap: 30%; /* kutular arasındaki boşluk */
   margin-bottom: 0px; /* kenar ile kutu arasındaki boşluk */
   margin: center;
   justify-content: center;
@@ -32,7 +32,7 @@ p{
   background-image: url("../resimler/onayla.png");
   background-position: center;
   background-size: cover;
-  width: 50%;
+  width: 150%;
   height: 50%;
 }
 #yeniden-basla {
@@ -41,7 +41,7 @@ p{
   background-size: cover;
   background-color: rgb(255, 210, 225);
   width: 150%;
-  height: 50%;
+  height: 150%;
 }
 .resimler {
   width: 150%;  /* Resimlere daha uygun bir genişlik verdim, isteğe bağlı */
