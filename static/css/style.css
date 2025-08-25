@@ -1,44 +1,54 @@
-body{
+body {
   background-color: rgb(233, 227, 242);
 }
 
-p{
+p {
   font-size: medium;
   line-height: 1.5;
   font-weight: normal;
 }
+
+/* Üstteki taş resimlerinin container'ı */
 .container {
-  display: flex; /* esnek kutu modeli */
-  gap: 20px; /* kutular arasındaki boşluk */
-  margin-bottom: 0px; /* kenar ile kutu arasındaki boşluk */
-  justify-content: center; 
+  display: flex;
+  justify-content: center;
+  gap: 20px;   /* kutular arası boşluk */
+  margin-bottom: 10px;
 }
+
+/* Takas seçenekleri için */
 .container2 {
   height: 100px;
   width: 100%;
-  display: flex; /* esnek kutu modeli */
-  gap: 30px; /* kutular arasındaki boşluk */
-  margin-bottom: 0px; /* kenar ile kutu arasındaki boşluk */
+  display: flex;
   justify-content: center;
+  gap: 30px;
   font-size: 40px;
+  margin-bottom: 10px;
 }
+
+/* 3. takas satırı için */
 .container3 {
   height: 100px;
   width: 100%;
-  display: flex; /* esnek kutu modeli */
-  gap: 30px; /* kutular arasındaki boşluk */
-  margin-bottom: 0px; /* kenar ile kutu arasındaki boşluk */
-  margin: center;
+  display: flex;
   justify-content: center;
+  gap: 30px;
   font-size: 40px;
+  margin-bottom: 10px;
 }
-.onay{
+
+/* Onay butonu */
+.onay {
   background-image: url("../resimler/onayla.png");
   background-position: center;
   background-size: cover;
   width: 150px;
   height: 50px;
+  cursor: pointer;
 }
+
+/* Yeniden başlatma butonu */
 #yeniden-basla {
   background-image: url("../resimler/yeniden-basla.png");
   background-position: center;
@@ -46,9 +56,12 @@ p{
   background-color: rgb(255, 210, 225);
   width: 150px;
   height: 100px;
+  cursor: pointer;
 }
+
+/* Taş resimleri kutusu */
 .resimler {
-  width: 150px;  /* Resimlere daha uygun bir genişlik verdim, isteğe bağlı */
+  width: 150px;
   height: 125px;
   border: 1px solid black;
   display: flex;
@@ -58,52 +71,62 @@ p{
   font-size: 1em;
   box-sizing: border-box;
 }
+
+/* Altın göstergesi */
 #para {
-    width: 150px;
-    height: 30px;
-    border: 2px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    background-color: rgb(251, 255, 223);
+  width: 150px;
+  height: 30px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background-color: rgb(251, 255, 223);
 }
+
+/* Taş sayılarını gösteren kutular */
 .sayi {
-    width: 150px;
-    height: 30px;
-    border: 2px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    background-color: rgb(251, 255, 223);
+  width: 150px;
+  height: 30px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background-color: rgb(251, 255, 223);
 }
+
+/* Takas kutuları */
 .işlem {
-    width: 150px;
-    height: 50px;
-    border: 2px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px; 
+  width: 150px;
+  height: 50px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
 }
+
+/* Kırmızı arka planlı işlem kutusu */
 .işlem1 {
-    width: 150px;
-    height: 50px;
-    border: 2px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    background-color: rgba(246, 4, 4, 0.5);
+  width: 150px;
+  height: 50px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background-color: rgba(246, 4, 4, 0.5);
 }
+
+/* Yeşil arka planlı işlem kutusu */
 .işlem2 {
-    width: 150px;
-    height: 50px;
-    border: 2px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    background-color: rgba(67, 255, 70, 0.5);
+  width: 150px;
+  height: 50px;
+  border: 2px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  background-color: rgba(67, 255, 70, 0.5);
 }
