@@ -1,0 +1,1 @@
+web: gunicorn takas_oyunu:app
