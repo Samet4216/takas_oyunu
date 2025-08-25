@@ -9,7 +9,7 @@ p{
 }
 .container {
   display: flex; /* esnek kutu modeli */
-  gap: 50%; /* kutular arasındaki boşluk */
+  gap: 20px; /* kutular arasındaki boşluk */
   margin-bottom: 0px; /* kenar ile kutu arasındaki boşluk */
   justify-content: center; 
 }
