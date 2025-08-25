@@ -14,6 +14,8 @@ p{
   justify-content: center; 
 }
 .container2 {
+  height: 100px;
+  width: 100%;
   display: flex; /* esnek kutu modeli */
   gap: 30px; /* kutular arasındaki boşluk */
   margin-bottom: 0px; /* kenar ile kutu arasındaki boşluk */
@@ -21,6 +23,8 @@ p{
   font-size: 40px;
 }
 .container3 {
+  height: 100px;
+  width: 100%;
   display: flex; /* esnek kutu modeli */
   gap: 30px; /* kutular arasındaki boşluk */
   margin-bottom: 0px; /* kenar ile kutu arasındaki boşluk */
