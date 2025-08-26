@@ -3,7 +3,7 @@ body {
 }
 
 p {
-  font-size: medium;
+  font-size: 18PX;
   line-height: 1.5;
   font-weight: normal;
 }
@@ -56,7 +56,7 @@ p {
   background-size: cover;
   background-color: rgb(255, 210, 225);
   width: 150px;
-  height: 100px;
+  height: 50px;
   /* Üzerine gelince el imleci çıkartır */
   cursor: pointer;
 }
