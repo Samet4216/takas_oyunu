@@ -43,7 +43,7 @@ p {
   background-image: url("../resimler/onayla.png");
   background-position: center;
   background-size: cover;
-  width: 150px;
+  width: 100px;
   height: 50px;
   cursor: pointer;
 }
