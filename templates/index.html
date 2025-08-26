@@ -91,13 +91,7 @@
                 },
                 body: JSON.stringify({ takas_id: tradeId })
             });
-
-            // Yanıt başarılı değilse konsola hata yazdır.
-            if (!response.ok) {
-                console.error('Sunucudan hatalı yanıt:', response.statusText);
-                return;
-            }
-
+ 
             // Sunucudan gelen yeni oyun durumunu (JSON) alalım.
             const newState = await response.json();
             // Arayüzü yeni verilerle güncelleyelim.
