@@ -144,7 +144,7 @@ p {
   .işlem,
   .işlem1,
   .işlem2 {
-    width: 100%;
-    height: auto;
+    width: 30%;
+    height: 50px;
   }
 }
