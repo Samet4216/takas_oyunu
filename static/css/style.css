@@ -44,7 +44,6 @@ p {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%, 100%;
   width: 100px;
   height: 50px;
   cursor: pointer;
@@ -100,7 +99,7 @@ p {
 
 /* Takas kutuları */
 .işlem {
-  width: 150px;
+  width: 100px;
   height: 50px;
   border: 2px solid black;
   display: flex;
@@ -111,7 +110,7 @@ p {
 
 /* Kırmızı arka planlı işlem kutusu */
 .işlem1 {
-  width: 150px;
+  width: 100px;
   height: 50px;
   border: 2px solid black;
   display: flex;
@@ -123,7 +122,7 @@ p {
 
 /* Yeşil arka planlı işlem kutusu */
 .işlem2 {
-  width: 150px;
+  width: 100px;
   height: 50px;
   border: 2px solid black;
   display: flex;
